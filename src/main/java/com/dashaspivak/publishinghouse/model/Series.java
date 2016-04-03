@@ -17,8 +17,8 @@ public class Series {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="series")
-    private List<Book> bookList;
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="series")
+//    private List<Book> bookList;
 
     public long getId() {
         return id;
@@ -35,13 +35,13 @@ public class Series {
         this.name = name;
     }
 
-    public List<Book> getBookList() {
-        return bookList;
-    }
-
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
-    }
+//    public List<Book> getBookList() {
+//        return bookList;
+//    }
+//
+//    public void setBookList(List<Book> bookList) {
+//        this.bookList = bookList;
+//    }
 
     @Override
     public boolean equals(Object o) {

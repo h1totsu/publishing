@@ -39,20 +39,22 @@
         <div class="col-sm-9 padding-right">
           <div class="features_items"><!--features_items-->
             <h2 class="title text-center">New Books</h2>
+            <div id="items"></div>
             <script type="text/template" id="single-item-template">
+              <@ _.each(books.models, function(book) {@>
               <div class="col-sm-4">
                 <div class="product-image-wrapper">
                     <div class="single-products">
                         <div class="productinfo text-center">
                             <img src="resources/images/home/product1.jpg" alt="" />
-                            <h2>$56</h2>
-                            <p>Elena Forbes.Die With Me</p>
+                            <h2>$999</h2>
+                            <p>Author Author.<@= book.get('book') @></p>
                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                         </div>
                         <div class="product-overlay">
                             <div class="overlay-content">
-                                <h2>$56</h2>
-                                <p><a href="/bpage">Elena Forbes.Die With Me</a></p>
+                                <h2>$999</h2>
+                                <p><a href="/bpage">Author Author.<@= book.get('book') @></a></p>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
                         </div>
@@ -65,33 +67,8 @@
                     </div>
                 </div>
               </div>
+              <@} ); @>
             </script>
-            <%--<div class="col-sm-4">--%>
-            <%--<div class="product-image-wrapper">--%>
-            <%--<div class="single-products">--%>
-            <%--<div class="productinfo text-center">--%>
-            <%--<img src="resources/images/home/product1.jpg" alt="" />--%>
-            <%--<h2>$56</h2>--%>
-            <%--<p>Elena Forbes.Die With Me</p>--%>
-            <%--<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
-            <%--</div>--%>
-            <%--<div class="product-overlay">--%>
-            <%--<div class="overlay-content">--%>
-            <%--<h2>$56</h2>--%>
-            <%--<p><a href="/bpage">Elena Forbes.Die With Me</a></p>--%>
-            <%--<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="choose">--%>
-            <%--<ul class="nav nav-pills nav-justified">--%>
-            <%--<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>--%>
-            <%--<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>--%>
-            <%--</ul>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-
           </div><!--features_items-->
           <div class="recommended_items"><!--recommended_items-->
             <h2 class="title text-center">recommended items</h2>
@@ -195,15 +172,16 @@
   <jsp:include page="/WEB-INF/views/layout/footer.jsp" />
 
   <script src="/resources/js/jquery.js"></script>
-  <script src="/resources/js/underscore.js"></script>
-  <script src="/resources/js/dust-full.min.js"></script>
-  <script src="/resources/js/backbone.js"></script>
+  <script src="/resources/js/bower/underscore/underscore.js"></script>
+  <script src="/resources/js/bower/backbone/backbone.js"></script>
+  <script src="/resources/js/bower/backbone.paginator/lib/backbone.paginator.js"></script>
   <script src="/resources/js/bootstrap.min.js"></script>
   <script src="/resources/js/bootstrap.min.js"></script>
   <script src="/resources/js/jquery.scrollUp.min.js"></script>
   <script src="/resources/js/price-range.js"></script>
   <script src="/resources/js/jquery.prettyPhoto.js"></script>
 
+  <script src="/resources/js/utils.js"></script>
   <script src="/resources/js/models.js"></script>
   <script src="/resources/js/views.js"></script>
   <script src="/resources/js/main.js"></script>

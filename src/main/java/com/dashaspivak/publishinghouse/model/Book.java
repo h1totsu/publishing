@@ -6,9 +6,6 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
 
-/**
- * Created by Kokosha on 29.02.2016.
- */
 @Entity
 @Table(name="book")
 public class Book {
@@ -38,28 +35,25 @@ public class Book {
     @Column(name = "url")
     private String url;
 
-    @ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
-    @JoinColumn(name="id_series", insertable = false, updatable = false)
-    private Series series;
+//    @ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
+//    @JoinColumn(name="id_series", insertable = false, updatable = false)
+//    private Series series;
 
-    @ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
-    @JoinColumn(name="id_author", insertable = false, updatable = false)
-    private Author author;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
-    private List<BookDetails> bookDetailsList;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
-    private List<BookMark> bookMarkList;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
-    private List<BookComment> bookCommentList;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
-    private List<BookGenre> bookGenreList;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
-    private List<LastSeen> lastSeenList;
+//    @ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
+//    @JoinColumn(name="id_author", insertable = false, updatable = false)
+//    private Author author;
+//
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
+//    private List<BookMark> bookMarkList;
+//
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
+//    private List<BookComment> bookCommentList;
+//
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
+//    private List<BookGenre> bookGenreList;
+//
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
+//    private List<LastSeen> lastSeenList;
 
     public long getId() {
         return id;
@@ -125,61 +119,53 @@ public class Book {
         this.url = url;
     }
 
-    public Series getSeries() {
-        return series;
-    }
+//    public Series getSeries() {
+//        return series;
+//    }
 
-    public void setSeries(Series series) {
-        this.series = series;
-    }
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
-
-    public List<BookDetails> getBookDetailsList() {
-        return bookDetailsList;
-    }
-
-    public void setBookDetailsList(List<BookDetails> bookDetailsList) {
-        this.bookDetailsList = bookDetailsList;
-    }
-
-    public List<LastSeen> getLastSeenList() {
-        return lastSeenList;
-    }
-
-    public void setLastSeenList(List<LastSeen> lastSeenList) {
-        this.lastSeenList = lastSeenList;
-    }
-
-    public List<BookMark> getBookMarkList() {
-        return bookMarkList;
-    }
-
-    public void setBookMarkList(List<BookMark> bookMarkList) {
-        this.bookMarkList = bookMarkList;
-    }
-
-    public List<BookComment> getBookCommentList() {
-        return bookCommentList;
-    }
-
-    public void setBookCommentList(List<BookComment> bookCommentList) {
-        this.bookCommentList = bookCommentList;
-    }
-
-    public List<BookGenre> getBookGenreList() {
-        return bookGenreList;
-    }
-
-    public void setBookGenreList(List<BookGenre> bookGenreList) {
-        this.bookGenreList = bookGenreList;
-    }
+//    public void setSeries(Series series) {
+//        this.series = series;
+//    }
+//
+//    public Author getAuthor() {
+//        return author;
+//    }
+//
+//    public void setAuthor(Author author) {
+//        this.author = author;
+//    }
+//
+//    public List<LastSeen> getLastSeenList() {
+//        return lastSeenList;
+//    }
+//
+//    public void setLastSeenList(List<LastSeen> lastSeenList) {
+//        this.lastSeenList = lastSeenList;
+//    }
+//
+//    public List<BookMark> getBookMarkList() {
+//        return bookMarkList;
+//    }
+//
+//    public void setBookMarkList(List<BookMark> bookMarkList) {
+//        this.bookMarkList = bookMarkList;
+//    }
+//
+//    public List<BookComment> getBookCommentList() {
+//        return bookCommentList;
+//    }
+//
+//    public void setBookCommentList(List<BookComment> bookCommentList) {
+//        this.bookCommentList = bookCommentList;
+//    }
+//
+//    public List<BookGenre> getBookGenreList() {
+//        return bookGenreList;
+//    }
+//
+//    public void setBookGenreList(List<BookGenre> bookGenreList) {
+//        this.bookGenreList = bookGenreList;
+//    }
 
     @Override
     public boolean equals(Object o) {

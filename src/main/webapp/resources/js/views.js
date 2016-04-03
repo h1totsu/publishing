@@ -2,19 +2,17 @@
 //------ Views -------
 //--------------------
 
-var AuthorView = Backbone.View.extend({
-    el: $('.features_items'),
+var BookView = Backbone.View.extend({
+    el: $('#items'),
     tmpl: '#single-item-template',
-    render : function(data) {
+    render : function() {
         var self = this;
-        authors = new Authors();
-        authors.fetch({
+        books = new Books();
+        books.fetch({
             success : function() {
-                //var authorThumbTemplate = _.template($('#authorThumbnail').html(), {
-                //    authors : authors
-                //});
-                //self.$el.html(authorThumbTemplate);
-                var template = _.template($(this.tmpl).html(), {authors : authors});
+                var template = _.template($('#single-item-template').html(), {
+                    books : books
+                });
                 self.$el.html(template);
             }
         });

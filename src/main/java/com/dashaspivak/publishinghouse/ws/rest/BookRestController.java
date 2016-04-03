@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * Created by Kokosha on 21.03.2016.
- */
 @RestController
 @RequestMapping(value = "/book")
 public class BookRestController {
@@ -36,8 +33,8 @@ public class BookRestController {
         return new ResponseEntity<>(bookDao.findById(id), HttpStatus.FOUND);
     }
 
-    @RequestMapping(value = "/book", method = RequestMethod.GET)
-    public ResponseEntity<Book> findByName(@PathVariable String book) {
-        return new ResponseEntity<Book>(bookDao.findByName(book), HttpStatus.FOUND);
+    @RequestMapping(value = "/name", method = RequestMethod.GET)
+    public ResponseEntity<Book> findByName(@PathVariable String name) {
+        return new ResponseEntity<Book>(bookDao.findByName(name), HttpStatus.FOUND);
     }
 }

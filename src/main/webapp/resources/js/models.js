@@ -13,6 +13,11 @@ var Author = Backbone.Model.extend({
 });
 
 
+var Book = Backbone.Model.extend({
+    urlRoot: 'http://localhost:8080/book',
+    idAttribute: 'id',
+});
+
 //--------------------
 //--- Collections ----
 //--------------------
@@ -22,6 +27,22 @@ var Authors = Backbone.Collection.extend({
     url : 'author',
 });
 
-//---- Init -----
+var Books = Backbone.Collection.extend({
+    model : Book,
+    url : 'book',
+})
 
-var authors = new Authors();
+var ColPage = Backbone.PageableCollection.extend({
+    model : Book,
+    url : 'book',
+
+    queryParams: {
+        totalRecords: 2,
+        totalPages: 2,
+    }
+});
+
+//---- Init -----
+var book = new Books();
+
+var colPage = new ColPage();

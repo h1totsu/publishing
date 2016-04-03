@@ -3,9 +3,6 @@ package com.dashaspivak.publishinghouse.model;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by Kokosha on 29.02.2016.
- */
 @Entity
 @Table(name = "bookDetails")
 public class BookDetails {
@@ -25,14 +22,6 @@ public class BookDetails {
     @Basic
     @Column(name = "url")
     private String url;
-
-    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_book", insertable = false, updatable = false)
-    private Book book;
-
-    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_language", insertable = false, updatable = false)
-    private Language language;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "bookDetails")
     private List<Order> orderList;
@@ -84,23 +73,6 @@ public class BookDetails {
     public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
     }
-
-    public Language getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(Language language) {
-        this.language = language;
-    }
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
 
     @Override
     public boolean equals(Object o) {
