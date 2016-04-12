@@ -39,7 +39,6 @@
         <div class="col-sm-9 padding-right">
           <div class="features_items"><!--features_items-->
             <h2 class="title text-center">New Books</h2>
-            <div id="items"></div>
             <script type="text/template" id="single-item-template">
               <@ _.each(books.models, function(book) {@>
               <div class="col-sm-4">
@@ -171,10 +170,9 @@
   </section>
   <jsp:include page="/WEB-INF/views/layout/footer.jsp" />
 
-  <script src="/resources/js/jquery.js"></script>
+  <script src="/resources/js/bower/jquery/dist/jquery.js"></script>
   <script src="/resources/js/bower/underscore/underscore.js"></script>
   <script src="/resources/js/bower/backbone/backbone.js"></script>
-  <script src="/resources/js/bower/backbone.paginator/lib/backbone.paginator.js"></script>
   <script src="/resources/js/bootstrap.min.js"></script>
   <script src="/resources/js/bootstrap.min.js"></script>
   <script src="/resources/js/jquery.scrollUp.min.js"></script>
