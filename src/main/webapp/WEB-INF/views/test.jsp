@@ -11,5 +11,6 @@
 <body>
     <h2><spring:message code="resource.someText" text="H2 text"/> </h2>
     <a href="?lang=en">EN</a> | <a href="?lang=ru">RU</a>
+    <div></div>
 </body>
 </html>
