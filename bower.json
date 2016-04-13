@@ -1,0 +1,13 @@
+{
+  "name": "publishing",
+  "homepage": "https://github.com/h1totsu/publishing",
+  "authors": [
+    "h1totsu <h1totsu@mail.ru>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "latest",
+    "backbone": "latest",
+    "underscore": "latest"
+  }
+}

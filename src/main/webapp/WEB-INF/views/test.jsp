@@ -7,9 +7,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title><spring:message code="resource.title" text="Title"/></title>
+    <script data-main="/resources/js/main" src="/resources/js/require.js"></script>
 </head>
 <body>
     <h2><spring:message code="resource.someText" text="H2 text"/> </h2>
     <a href="?lang=en">EN</a> | <a href="?lang=ru">RU</a>
+    <div id="forTest"></div>
+    <script type="text/template" id="single-item-template">
+        <ul>
+            <@ _.each(books.models, function(book) {@>
+            <li><@= book.get('book') @></li>
+            <@} ); @>
+        </ul>
+    </script>
 </body>
 </html>

@@ -1,7 +1,3 @@
-/**
- * Created by Kokosha on 27.02.2016.
- */
-
 
 //--------------------
 //------ Models ------
@@ -32,17 +28,5 @@ var Books = Backbone.Collection.extend({
     url : 'book',
 })
 
-var ColPage = Backbone.PageableCollection.extend({
-    model : Book,
-    url : 'book',
-
-    queryParams: {
-        totalRecords: 2,
-        totalPages: 2,
-    }
-});
-
 //---- Init -----
 var book = new Books();
-
-var colPage = new ColPage();
