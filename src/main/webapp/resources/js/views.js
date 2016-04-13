@@ -2,10 +2,8 @@
 //------ Views -------
 //--------------------
 var BookView = Backbone.View.extend({
-    el: $('#forTest'),
-    tmpl: '#single-item-template',
+    el: $('#items'),
     render : function() {
-        console.log('Test')
         var self = this;
         books = new Books();
         books.fetch({

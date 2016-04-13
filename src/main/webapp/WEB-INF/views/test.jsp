@@ -7,18 +7,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title><spring:message code="resource.title" text="Title"/></title>
-    <script data-main="/resources/js/main" src="/resources/js/require.js"></script>
 </head>
-<body>
-    <h2><spring:message code="resource.someText" text="H2 text"/> </h2>
-    <a href="?lang=en">EN</a> | <a href="?lang=ru">RU</a>
-    <div id="forTest"></div>
-    <script type="text/template" id="single-item-template">
-        <ul>
-            <@ _.each(books.models, function(book) {@>
-            <li><@= book.get('book') @></li>
-            <@} ); @>
-        </ul>
-    </script>
-</body>
+    <body>
+        <h2><spring:message code="resource.someText" text="H2 text"/> </h2>
+        <a href="?lang=en">EN</a> | <a href="?lang=ru">RU</a>
+    </body>
+
+    <script src="/resources/js/bower/jquery/dist/jquery.js"></script>
+    <script src="/resources/js/bower/underscore/underscore.js"></script>
+    <script src="/resources/js/bower/backbone/backbone.js"></script>
+    <script src="/resources/js/utils.js"></script>
+    <script src="/resources/js/models.js"></script>
+    <script src="/resources/js/views.js"></script>
+    <script src="/resources/js/main.js"></script>
 </html>
