@@ -38,13 +38,13 @@ requirejs.config({
 		'jquery': './bower/jquery/dist/jquery',
 		'underscore': './bower/underscore/underscore',
 		'backbone': './bower/backbone/backbone',
-		'dust': './bower/dustjs/dist/dust-full-0.3.0'
+		'dust': './bower/dustjs-linkedin/dist/dust-full'
 	},
 });
 
+define.amd.dust = true;
 
-
-require(['app'], function(app) {
+require(['app', 'dust'], function(app, dustjs) {
 	return app.start();
 })
 

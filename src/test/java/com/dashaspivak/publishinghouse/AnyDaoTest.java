@@ -18,12 +18,12 @@ import com.dashaspivak.publishinghouse.dao.*;
 })
 public class AnyDaoTest {
 
-    @Autowired
-    AuthorDao authorDao;
-
-    @Test
-    public void testDaoMethod() throws Exception {
-       // System.out.println(authorDao.findById(1).getBookList().size());
-        System.out.println(authorDao.findAll());
-    }
+//    @Autowired
+//    AuthorDao authorDao;
+//
+//    @Test
+//    public void testDaoMethod() throws Exception {
+//       // System.out.println(authorDao.findById(1).getBookList().size());
+//        System.out.println(authorDao.findAll());
+//    }
 }
