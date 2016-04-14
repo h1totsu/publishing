@@ -181,6 +181,6 @@
 
   <script src="/resources/js/utils.js"></script>
   <script src="/resources/js/models.js"></script>
-  <script src="/resources/js/views.js"></script>
+  <script src="/resources/js/views/book.js"></script>
   <script src="/resources/js/main.js"></script>
 </body>

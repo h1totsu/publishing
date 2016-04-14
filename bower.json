@@ -8,6 +8,7 @@
   "dependencies": {
     "jquery": "latest",
     "backbone": "latest",
-    "underscore": "latest"
+    "underscore": "latest",
+    "dustjs": "latest"
   }
 }
