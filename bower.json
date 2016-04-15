@@ -9,6 +9,6 @@
     "jquery": "latest",
     "backbone": "latest",
     "underscore": "latest",
-    "dustjs": "latest"
+    "dustjs-linkedin": "latest"
   }
 }

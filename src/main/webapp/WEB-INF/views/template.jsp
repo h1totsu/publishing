@@ -42,7 +42,6 @@
 
         <div class="col-sm-9 padding-right">
           <div class="features_items"><!--features_items-->
-            123123123
           </div><!--features_items-->
           <div class="recommended_items"><!--recommended_items-->
             <h2 class="title text-center">recommended items</h2>

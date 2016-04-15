@@ -1,8 +1,8 @@
 
-define(['require', 'backbone',
+define(['backbone',
     './views/book',
     './views/author'],
-    function(require, Backbone,
+    function(Backbone,
              BookView, AuthorView) {
     var Controller = Backbone.Router.extend({
         routes: {
@@ -11,11 +11,9 @@ define(['require', 'backbone',
             "authors": "authors",
         },
         books: function() {
-            console.log('book')
             new BookView().render();
         },
         authors: function() {
-            console.log('aut')
             new AuthorView().render();
         }
     });
