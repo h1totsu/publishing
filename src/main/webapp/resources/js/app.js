@@ -1,4 +1,3 @@
-
 define(['backbone', 'router'], function (Backbone, Controller) {
     var app = {
         start: function () {

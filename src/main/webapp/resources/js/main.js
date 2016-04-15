@@ -28,8 +28,6 @@
 //	//	});
 //	//});
 //
-//	var view = new BookView();
-//	view.render();
 //});
 
 requirejs.config({

@@ -19,7 +19,7 @@ public class MainController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     String getMain(Model model) {
 //        model.addAttribute("test", authorDao.findAll());
-        return "test";
+        return "template";
     }
 
 

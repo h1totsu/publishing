@@ -1,13 +1,22 @@
 
-define(['require', 'backbone', './views/book'], function(require, Backbone, BookView) {
+define(['require', 'backbone',
+    './views/book',
+    './views/author'],
+    function(require, Backbone,
+             BookView, AuthorView) {
     var Controller = Backbone.Router.extend({
         routes: {
-            "": "start", // Пустой hash-тэг
-            "!/": "start", // Начальная страница
+            "": "books",
+            "/": "books",
+            "authors": "authors",
         },
-        start: function() {
-            var view = new BookView();
-            view.render();
+        books: function() {
+            console.log('book')
+            new BookView().render();
+        },
+        authors: function() {
+            console.log('aut')
+            new AuthorView().render();
         }
     });
     return Controller;

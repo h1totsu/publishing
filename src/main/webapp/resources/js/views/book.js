@@ -1,13 +1,17 @@
-//--------------------
-//------ Views -------
-//--------------------
 define(['jquery', 'backbone', 'dust', 'text!../templates/book.html', ], function($, Backbone, dust, tmpl) {
     var BookView = Backbone.View.extend({
-        el: $('#items'),
+        el: '.features_items',
         render: function () {
-            var data = {name : '123'};
-            dust.renderSource(tmpl, JSON.parse(data), function(err, out) {
-                console.log(out);
+            var books = {
+                books : [
+                    {'name' : 'Book1'},
+                    {'name' : 'Book2'},
+                    {'name' : 'Book3'}
+                ]
+            }
+            var self = this;
+            dust.renderSource(tmpl, books, function(err, out) {
+                self.$el.html(out);
             });
         }
     });

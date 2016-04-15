@@ -91,8 +91,8 @@
               <li><a href="/" class="active">Home</a></li>
               <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                 <ul role="menu" class="sub-menu">
-                  <li><a href="/bcatalog"/>Books</li>
-                  <li> <a href="/acatalog">Authors</a></li>
+                  <li><a href="/"/>Books</li>
+                  <li> <a href="#authors">Authors</a></li>
                   <li><a href="checkout.html">Catalog</a></li>
                   <li><a href="/newBooks">New Books</a></li>
                   <li><a href="login.html">Login</a></li>
