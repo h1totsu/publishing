@@ -23,6 +23,15 @@ public class BookDetails {
     @Column(name = "url")
     private String url;
 
+
+
+    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_book", insertable = false, updatable = false)
+    private Book book;
+    //
+    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_language", insertable = false, updatable = false)
+    private Language language;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "bookDetails")
     private List<Order> orderList;
 
@@ -73,7 +82,21 @@ public class BookDetails {
     public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
     }
+    public Book getBook() {
+        return book;
+    }
 
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

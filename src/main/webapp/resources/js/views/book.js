@@ -7,9 +7,8 @@ define(['jquery', 'backbone', 'dust', 'text!../templates/book.html'],
             el: '.features_items',
             render: function () {;
                 var self = this;
-                dust.renderSource(tmpl, {'books' : new Books().fetch()}, function(err, out) {
-                    self.$el.html(out);
-                });
+                dust.renderSource(tmpl, {'books' : new Books().fetch()},
+                    function(err, out) { self.$el.html(out) });
             }
         });
         return BookView;

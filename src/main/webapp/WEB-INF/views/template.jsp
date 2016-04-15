@@ -147,6 +147,5 @@
   <script src="/resources/js/bower/jquery/dist/jquery.js"></script>
   <script src="/resources/js/bootstrap.min.js"></script>
   <script src="/resources/js/jquery.scrollUp.min.js"></script>
-  <script src="/resources/js/price-range.js"></script>
   <script src="/resources/js/jquery.prettyPhoto.js"></script>
 </body>

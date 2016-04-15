@@ -1,7 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
 <header id="header"><!--header-->
   <div class="header_top"><!--header_top-->
     <div class="container">
@@ -68,6 +71,12 @@
               <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
               <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
               <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+              <li>
+                <a href="?lang=en">EN</a>
+              </li>
+              <li>
+                <a href="?lang=ru">RU</a>
+              </li>
             </ul>
           </div>
         </div>
