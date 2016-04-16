@@ -26,7 +26,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordian" href="/author">
+            <a data-toggle="collapse" data-parent="#accordian" href="#authors">
               <span class="badge pull-right"><i class="fa fa-plus"></i></span>
               <spring:message code="resource.authors"/>
             </a>
@@ -38,7 +38,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordian" href="/series">
+            <a data-toggle="collapse" data-parent="#accordian" href="#series">
               <span class="badge pull-right"><i class="fa fa-plus"></i></span>
               <spring:message code="resource.series"/>
             </a>
@@ -48,7 +48,7 @@
       </div>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4 class="panel-title"><a href="/genre"><spring:message code="resource.genres"/></a></h4>
+          <h4 class="panel-title"><a href="#genre"><spring:message code="resource.genres"/></a></h4>
         </div>
       </div>
       <div class="panel panel-default">

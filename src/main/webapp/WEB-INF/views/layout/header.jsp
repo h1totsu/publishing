@@ -97,7 +97,7 @@
           </div>
           <div class="mainmenu pull-left">
             <ul class="nav navbar-nav collapse navbar-collapse">
-              <li><a href="/book" class="active"><spring:message code="resource.home"/></a></li>
+              <li><a href="#books" class="active"><spring:message code="resource.home"/></a></li>
               <li class="dropdown"><a href="#"><spring:message code="resource.shop"/><i class="fa fa-angle-down"></i></a>
                 <ul role="menu" class="sub-menu">
                   <li><a href="#books"/><spring:message code="resource.books"/></li>
@@ -108,8 +108,8 @@
               </li>
               <li class="dropdown"><a href="#"><spring:message code="resource.more"/><i class="fa fa-angle-down"></i></a>
                 <ul role="menu" class="sub-menu">
-                  <li><a href="/series"><spring:message code="resource.series"/></a></li>
-                  <li><a href="/genre"><spring:message code="resource.genres"/></a></li>
+                  <li><a href="#series"><spring:message code="resource.series"/></a></li>
+                  <li><a href="#genre"><spring:message code="resource.genres"/></a></li>
                 </ul>
               </li>
               <li><a href="404.html">404</a></li>
