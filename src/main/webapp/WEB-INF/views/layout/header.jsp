@@ -109,7 +109,7 @@
               <li class="dropdown"><a href="#"><spring:message code="resource.more"/><i class="fa fa-angle-down"></i></a>
                 <ul role="menu" class="sub-menu">
                   <li><a href="#series"><spring:message code="resource.series"/></a></li>
-                  <li><a href="#genre"><spring:message code="resource.genres"/></a></li>
+                  <li><a href="#genres"><spring:message code="resource.genres"/></a></li>
                 </ul>
               </li>
               <li><a href="404.html">404</a></li>

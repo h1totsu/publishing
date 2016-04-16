@@ -1,8 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-
-
-<h2 class="title text-center"><spring:message code="resource.authors"/></h2>
+<h2 class="title text-center">Authors</h2>
 {#authors}
 <div class="col-sm-4">
   <div class="product-image-wrapper">
