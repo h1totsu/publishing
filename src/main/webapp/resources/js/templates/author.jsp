@@ -19,6 +19,7 @@
           <h2>$999</h2>
           <p><a href="/bpage">{lastname}</a></p>
           <%--<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>--%>
+
         </div>
       </div>
     </div>
