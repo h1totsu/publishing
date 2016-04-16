@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'dust', 'text!../templates/book.html'],
+define(['jquery', 'backbone', 'dust', 'text!../templates/book.jsp'],
     function($, Backbone, dust, tmpl) {
         var Books = Backbone.Collection.extend({
             url: 'book',
@@ -12,6 +12,6 @@ define(['jquery', 'backbone', 'dust', 'text!../templates/book.html'],
             }
         });
         return BookView;
-});
+    });
 
 

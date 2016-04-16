@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
 <section id="slider"><!--slider-->
   <div class="container">
     <div class="row">
@@ -13,10 +17,10 @@
           <div class="carousel-inner">
             <div class="item active">
               <div class="col-sm-6">
-                <h1>BOOKSHOP</h1>
-                <h2>Find yourself in books</h2>
-                <p>All new books you can buy here</p>
-                <button type="button" class="btn btn-default get">Get it now</button>
+                <h1><spring:message code="resource.bookshop_content"/></h1>
+                <h2><spring:message code="resource.find_content"/></h2>
+                <p><spring:message code="resource.allbooks_content"/></p>
+                <button type="button" class="btn btn-default get"><spring:message code="resource.getitnow"/></button>
               </div>
               <div class="col-sm-6">
                 <img src="resources/images/home/girl1.jpg" class="girl img-responsive" alt="" />
@@ -25,10 +29,10 @@
             </div>
             <div class="item">
               <div class="col-sm-6">
-                <h1>BOOKSHOP</h1>
-                <h2>Find yourself in books</h2>
-                <p>All new books you can buy here</p>
-                <button type="button" class="btn btn-default get">Get it now</button>
+                <h1><spring:message code="resource.bookshop_content"/></h1>
+                <h2><spring:message code="resource.find_content"/></h2>
+                <p><spring:message code="resource.allbooks_content"/></p>
+                <button type="button" class="btn btn-default get"><spring:message code="resource.getitnow"/></button>
               </div>
               <div class="col-sm-6">
                 <img src="resources/images/home/girl2.jpg" class="girl img-responsive" alt="" />
@@ -38,10 +42,10 @@
 
             <div class="item">
               <div class="col-sm-6">
-                <h1>BOOKSHOP</h1>
-                <h2>Find yourself in books</h2>
-                <p>All new books you can buy here</p>
-                <button type="button" class="btn btn-default get">Get it now</button>
+                <h1><spring:message code="resource.bookshop_content"/></h1>
+                <h2><spring:message code="resource.find_content"/></h2>
+                <p><spring:message code="resource.allbooks_content"/></p>
+                <button type="button" class="btn btn-default get"><spring:message code="resource.getitnow"/></button>
               </div>
               <div class="col-sm-6">
                 <img src="resources/images/home/girl3.jpg" class="girl img-responsive" alt="" />

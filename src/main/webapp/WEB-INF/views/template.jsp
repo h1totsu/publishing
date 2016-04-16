@@ -1,4 +1,7 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +47,7 @@
           <div class="features_items"><!--features_items-->
           </div><!--features_items-->
           <div class="recommended_items"><!--recommended_items-->
-            <h2 class="title text-center">recommended items</h2>
+            <h2 class="title text-center"><spring:message code="resource.recommended"/></h2>
             <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="item active">
@@ -55,7 +58,7 @@
                           <img src="resources/images/home/recommend1.jpg" alt="" />
                           <h2>$56</h2>
                           <p>Jean-Christophe Grangé.Passenger</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i><spring:message code="resource.card"/></a>
                         </div>
 
                       </div>
@@ -68,7 +71,7 @@
                           <img src="resources/images/home/recommend2.jpg" alt="" />
                           <h2>$56</h2>
                           <p>Fred Vargas.Dead, get up!</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i><spring:message code="resource.card"/></a>
                         </div>
 
                       </div>
@@ -81,7 +84,7 @@
                           <img src="resources/images/home/recommend3.jpg" alt="" />
                           <h2>$56</h2>
                           <p>Peter Robinson. Beyond</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i><spring:message code="resource.card"/></a>
                         </div>
 
                       </div>
@@ -96,7 +99,7 @@
                           <img src="resources/images/home/recommend1.jpg" alt="" />
                           <h2>$56</h2>
                           <p>Jean-Christophe Grangé.Passenger</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i><spring:message code="resource.card"/></a>
                         </div>
 
                       </div>
@@ -109,7 +112,7 @@
                           <img src="resources/images/home/recommend2.jpg" alt="" />
                           <h2>$56</h2>
                           <p>Fred Vargas.Dead, get up!</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i><spring:message code="resource.card"/></a>
                         </div>
 
                       </div>
@@ -122,7 +125,7 @@
                           <img src="resources/images/home/recommend3.jpg" alt="" />
                           <h2>$56</h2>
                           <p>Peter Robinson. Beyond</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i><spring:message code="resource.card"/></a>
                         </div>
 
                       </div>

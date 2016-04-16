@@ -37,7 +37,7 @@
       <div class="row">
         <div class="col-sm-4">
           <div class="logo pull-left">
-            <a href="index.jsp"><img src="resources/images/home/logo.png" alt="" /></a>
+            <a href="/book"><img src="resources/images/home/logo.png" alt="" /></a>
           </div>
           <div class="btn-group pull-right">
             <div class="btn-group">
@@ -97,25 +97,23 @@
           </div>
           <div class="mainmenu pull-left">
             <ul class="nav navbar-nav collapse navbar-collapse">
-              <li><a href="/" class="active">Home</a></li>
-              <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+              <li><a href="/book" class="active"><spring:message code="resource.home"/></a></li>
+              <li class="dropdown"><a href="#"><spring:message code="resource.shop"/><i class="fa fa-angle-down"></i></a>
                 <ul role="menu" class="sub-menu">
-                  <li><a href="/"/>Books</li>
-                  <li> <a href="#authors">Authors</a></li>
-                  <li><a href="checkout.html">Catalog</a></li>
-                  <li><a href="/newBooks">New Books</a></li>
-                  <li><a href="login.html">Login</a></li>
+                  <li><a href="#books"/><spring:message code="resource.books"/></li>
+                  <li> <a href="#authors"><spring:message code="resource.authors"/></a></li>
+                  <li><a href="checkout.html"><spring:message code="resources.catalog"/></a></li>
+                  <li><a href="/newBooks"><spring:message code="resource.newbooks"/></a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#">More<i class="fa fa-angle-down"></i></a>
+              <li class="dropdown"><a href="#"><spring:message code="resource.more"/><i class="fa fa-angle-down"></i></a>
                 <ul role="menu" class="sub-menu">
-                  <li><a href="/series">Series</a></li>
-                  <li><a href="/genreCat">Genre</a></li>
-                  <li><a href="blog-single.html">Demo</a></li>
+                  <li><a href="/series"><spring:message code="resource.series"/></a></li>
+                  <li><a href="/genre"><spring:message code="resource.genres"/></a></li>
                 </ul>
               </li>
               <li><a href="404.html">404</a></li>
-              <li><a href="contact-us.html">About</a></li>
+              <li><a href="contact-us.html"><spring:message code="resource.about"/></a></li>
             </ul>
           </div>
         </div>
