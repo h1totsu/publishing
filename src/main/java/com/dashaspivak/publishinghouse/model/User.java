@@ -1,6 +1,10 @@
 package com.dashaspivak.publishinghouse.model;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /**
@@ -10,20 +14,26 @@ import java.util.List;
 @Table(name = "user")
 public class User {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
     @Basic
     @Column(name = "firstname")
+    @NotBlank
+    @Size(min = 3, max = 16)
     private String firstname;
     @Basic
     @Column(name = "lastname")
+    @NotBlank
+    @Size(min = 3, max = 16)
     private String lastname;
     @Basic
     @Column(name = "email")
+    @Email
     private String email;
     @Basic
     @Column(name = "password")
+    @NotBlank
     private String password;
     @Basic
     @Column(name = "password_salt")
@@ -35,25 +45,25 @@ public class User {
     @Column(name = "activation_token")
     private String activationToken;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Order> orderList;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<AuthorMark> authorMarkList;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<AuthorComment> authorCommentList;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<BookMark> bookMarkList;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<BookComment> bookCommentList;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<LastSeen> lastSeenList;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<UserRole> userRoleList;
 
 
@@ -208,5 +218,10 @@ public class User {
         result = 31 * result + (int) isActivated;
         result = 31 * result + (activationToken != null ? activationToken.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "User{ firstname-"+firstname+" lastname-"+lastname+" email-"+email+ " password-"+password+"}";
     }
 }

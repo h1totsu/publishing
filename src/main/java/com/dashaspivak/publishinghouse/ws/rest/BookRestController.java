@@ -29,7 +29,7 @@ public class BookRestController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Book> findById(@PathVariable long id) {
+    public ResponseEntity<Book> findById(@PathVariable("id") long id) {
         return new ResponseEntity<>(bookDao.findById(id), HttpStatus.FOUND);
     }
 
