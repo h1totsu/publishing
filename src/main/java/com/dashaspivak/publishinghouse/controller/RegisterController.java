@@ -1,16 +1,13 @@
 package com.dashaspivak.publishinghouse.controller;
 
+import com.dashaspivak.publishinghouse.dao.UserDao;
 import com.dashaspivak.publishinghouse.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,10 +21,11 @@ public class RegisterController {
         User userForm = new User();
         model.put("userForm", userForm);
 
-        return "registration";
+        return "layout/registration";
     }
 
-
+    @Autowired
+    UserDao userDao;
     @RequestMapping(method = RequestMethod.POST)
     public String processRegistration(@ModelAttribute("userForm") User user,
                                       Map<String, Object> model) {
@@ -36,6 +34,8 @@ public class RegisterController {
         System.out.println("lastname: " + user.getLastname());
         System.out.println("email: " + user.getEmail());
         System.out.println("password: " + user.getPassword());
+
+        userDao.create(user);
 
         return "success";
     }

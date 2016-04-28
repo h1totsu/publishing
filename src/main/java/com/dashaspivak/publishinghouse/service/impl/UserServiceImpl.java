@@ -4,6 +4,9 @@
 //import com.dashaspivak.publishinghouse.model.User;
 //import com.dashaspivak.publishinghouse.service.UserService;
 //import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 //import org.springframework.transaction.annotation.Transactional;
 //
 //import java.util.List;
@@ -11,23 +14,10 @@
 ///**
 // * Created by Kokosha on 28.04.2016.
 // */
-//public class UserServiceImpl implements UserService{
+//public class UserServiceImpl implements UserDetailsService {
 //
-//    @Autowired
-//    private UserDao userDao;
+//    @Override
+//    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
 //
-//    @Transactional
-//    public void findById(Long id){
-//        userDao.findById(id);
 //    }
-//
-//    @Transactional
-//    public List <User> findAll(){
-//        return userDao.findAll();
-//    }
-//
-////    @Transactional
-////    public void findByEmail(String email){
-////        userDao.findByEmail(email);
-////    }
 //}

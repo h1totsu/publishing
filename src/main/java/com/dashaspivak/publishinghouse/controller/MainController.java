@@ -22,7 +22,7 @@ public class MainController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     String getMain(Model model) {
 //        model.addAttribute("test", authorDao.findAll());
-        return "/login";
+        return "/layout/registration";
     }
 
 
@@ -36,10 +36,10 @@ public class MainController {
         return "/authorPage";
     }
 
-    // @RequestMapping(value = "/ccatalog", method = RequestMethod.GET)
-    // String getSeriesCatalog(Model model){
-    //   return "bookpage";
-    //  }
+     @RequestMapping(value = "/layout/registration", method = RequestMethod.GET)
+     String getSeriesCatalog(Model model){
+       return "/layout/registration";
+      }
 
     @RequestMapping(value = "/acatalog", method = RequestMethod.GET)
     String getGenreCatalog(Model model) {
