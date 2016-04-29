@@ -1,9 +1,7 @@
 package com.dashaspivak.publishinghouse.controller;
 
 import com.dashaspivak.publishinghouse.dao.AddressUserDao;
-import com.dashaspivak.publishinghouse.dao.UserDao;
 import com.dashaspivak.publishinghouse.model.AddressUser;
-import com.dashaspivak.publishinghouse.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,7 +21,7 @@ public class AddressController {
             AddressUser userAddress = new AddressUser();
             model.put("userAddress", userAddress);
 
-            return "address";
+            return "layout/address";
         }
 
         @Autowired
@@ -41,6 +39,6 @@ public class AddressController {
 
             addressUserDao.create(addressUser);
 
-            return "addressSuccess";
+            return "layout/addressSuccess";
         }
 }

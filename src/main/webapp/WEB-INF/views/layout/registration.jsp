@@ -12,12 +12,9 @@
 <link href="/resources/css/animate.css" rel="stylesheet">
 <link href="/resources/css/main.css" rel="stylesheet">
 <link href="/resources/css/responsive.css" rel="stylesheet">
-
-<div style="text-align: center;">
-    <div class="shopper-informations">
-        <div class="row">
-            <div class="col-sm-5 clearfix">
-                <div  class="bill-to">
+<section>
+<div class="col-sm-4">
+    <div class="signup-form">
                 <%--<div  class="form-two">--%>
                 <p><spring:message code='resource.information_for_register'/>:</p>
                 <form:form action="register" method="post" commandName="userForm">
@@ -69,4 +66,5 @@
 </div>
 </div>
 </div>
-<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+</section>
+<%--<jsp:include page="/WEB-INF/views/layout/footer.jsp" />--%>
