@@ -37,6 +37,6 @@ public class RegisterController {
 
         userDao.create(user);
 
-        return "success";
+        return "layout/success";
     }
 }
