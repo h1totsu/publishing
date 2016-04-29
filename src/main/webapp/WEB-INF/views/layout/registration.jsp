@@ -1,6 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="border" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <jsp:include page="header.jsp"/>
 
@@ -18,7 +19,7 @@
             <div class="col-sm-5 clearfix">
                 <div  class="bill-to">
                 <%--<div  class="form-two">--%>
-                <p>Information for register</p>
+                <p><spring:message code='resource.information_for_register'/>:</p>
                 <form:form action="register" method="post" commandName="userForm">
                     <table align="center">
                         <tr>
@@ -58,7 +59,7 @@
                             <%--<a class="btn btn-primary" href=""><spring:message code='resource.submit'/></a>--%>
                         <tr>
                             <td colspan="2" align="center"><input type="submit" class="btn btn-primary"
-                                                                  value="Register"/></td>
+                                                                  value="<spring:message code='resource.Register'/>"/></td>
                         </tr>
                     </table>
                 </form:form>

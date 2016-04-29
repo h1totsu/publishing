@@ -1,6 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="border" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <jsp:include page="header.jsp"/>
 
@@ -19,19 +20,19 @@
 <div align="center">
   <table border="0" align="center">
     <tr>
-      <td colspan="2" align="center"><h2>Registration Succeeded!</h2></td>
+      <td colspan="2" align="center"><h2><spring:message code='resource.Registration_Succeeded'/></h2></td>
     </tr>
     <tr>
       <td colspan="2" align="center">
-        <h3>Thank you for registering! Here's the review of your details:</h3>
+        <h3><spring:message code='resource.thank'/></h3>
       </td>
     </tr>
     <tr>
-      <td>first Name:</td>
+      <td><spring:message code='resource.first_name_title'/>:</td>
       <td>${userForm.firstname}</td>
     </tr>
     <tr>
-      <td>last Name:</td>
+      <td><spring:message code='resource.last_name_title'/>:</td>
       <td>${userForm.lastname}</td>
     </tr>
     <tr>
