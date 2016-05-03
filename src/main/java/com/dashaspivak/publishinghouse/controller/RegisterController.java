@@ -21,7 +21,7 @@ public class RegisterController {
         User userForm = new User();
         model.put("userForm", userForm);
 
-        return "layout/registration";
+        return "layout/reglog";
     }
 
     @Autowired
