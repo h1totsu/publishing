@@ -5,7 +5,10 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Kokosha on 29.02.2016.
@@ -45,27 +48,40 @@ public class User {
     @Column(name = "activation_token")
     private String activationToken;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    private List<Order> orderList;
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+//    private List<Order> orderList;
+//
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+//    private List<AuthorMark> authorMarkList;
+//
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+//    private List<AuthorComment> authorCommentList;
+//
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+//    private List<BookMark> bookMarkList;
+//
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+//    private List<BookComment> bookCommentList;
+//
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+//    private List<LastSeen> lastSeenList;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    private List<AuthorMark> authorMarkList;
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+//    private List<UserRole> userRoleList;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    private List<AuthorComment> authorCommentList;
+    public Set<Role> getRoles() {
+        return roles;
+    }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    private List<BookMark> bookMarkList;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    private List<BookComment> bookCommentList;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    private List<LastSeen> lastSeenList;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    private List<UserRole> userRoleList;
-
+    @ManyToMany(cascade= CascadeType.ALL)
+    @JoinTable(name="userrole",
+            joinColumns = {@JoinColumn (name="id_user")},
+            inverseJoinColumns ={ @JoinColumn (name="id_roles")})
+    private Set<Role> roles = new HashSet<>();
 
     public long getId() {
         return id;
@@ -131,61 +147,61 @@ public class User {
         this.activationToken = activationToken;
     }
 
-    public List<UserRole> getUserRoleList() {
-        return userRoleList;
-    }
+//    public List<UserRole> getUserRoleList() {
+//        return userRoleList;
+//    }
+//
+//    public void setUserRoleList(List<UserRole> userRoleList) {
+//        this.userRoleList = userRoleList;
+//    }
 
-    public void setUserRoleList(List<UserRole> userRoleList) {
-        this.userRoleList = userRoleList;
-    }
-
-    public List<LastSeen> getLastSeenList() {
-        return lastSeenList;
-    }
-
-    public void setLastSeenList(List<LastSeen> lastSeenList) {
-        this.lastSeenList = lastSeenList;
-    }
-
-    public List<BookComment> getBookCommentList() {
-        return bookCommentList;
-    }
-
-    public void setBookCommentList(List<BookComment> bookCommentList) {
-        this.bookCommentList = bookCommentList;
-    }
-
-    public List<BookMark> getBookMarkList() {
-        return bookMarkList;
-    }
-
-    public void setBookMarkList(List<BookMark> bookMarkList) {
-        this.bookMarkList = bookMarkList;
-    }
-
-    public List<AuthorComment> getAuthorCommentList() {
-        return authorCommentList;
-    }
-
-    public void setAuthorCommentList(List<AuthorComment> authorCommentList) {
-        this.authorCommentList = authorCommentList;
-    }
-
-    public List<AuthorMark> getAuthorMarkList() {
-        return authorMarkList;
-    }
-
-    public void setAuthorMarkList(List<AuthorMark> authorMarkList) {
-        this.authorMarkList = authorMarkList;
-    }
-
-    public List<Order> getOrderList() {
-        return orderList;
-    }
-
-    public void setOrderList(List<Order> orderList) {
-        this.orderList = orderList;
-    }
+//    public List<LastSeen> getLastSeenList() {
+//        return lastSeenList;
+//    }
+//
+//    public void setLastSeenList(List<LastSeen> lastSeenList) {
+//        this.lastSeenList = lastSeenList;
+//    }
+//
+//    public List<BookComment> getBookCommentList() {
+//        return bookCommentList;
+//    }
+//
+//    public void setBookCommentList(List<BookComment> bookCommentList) {
+//        this.bookCommentList = bookCommentList;
+//    }
+//
+//    public List<BookMark> getBookMarkList() {
+//        return bookMarkList;
+//    }
+//
+//    public void setBookMarkList(List<BookMark> bookMarkList) {
+//        this.bookMarkList = bookMarkList;
+//    }
+//
+//    public List<AuthorComment> getAuthorCommentList() {
+//        return authorCommentList;
+//    }
+//
+//    public void setAuthorCommentList(List<AuthorComment> authorCommentList) {
+//        this.authorCommentList = authorCommentList;
+//    }
+//
+//    public List<AuthorMark> getAuthorMarkList() {
+//        return authorMarkList;
+//    }
+//
+//    public void setAuthorMarkList(List<AuthorMark> authorMarkList) {
+//        this.authorMarkList = authorMarkList;
+//    }
+//
+//    public List<Order> getOrderList() {
+//        return orderList;
+//    }
+//
+//    public void setOrderList(List<Order> orderList) {
+//        this.orderList = orderList;
+//    }
 
     @Override
     public boolean equals(Object o) {
@@ -222,6 +238,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{ firstname-"+firstname+" lastname-"+lastname+" email-"+email+ " password-"+password+"}";
+        return "User{first name-"+firstname+" lastname-"+lastname+" email-"+email+ " password-"+password+"}";
     }
 }

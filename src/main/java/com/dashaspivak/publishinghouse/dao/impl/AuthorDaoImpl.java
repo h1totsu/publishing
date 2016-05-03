@@ -48,7 +48,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
     @Override
     public Author findByLastName(String lastname) {
-        String lastNameQuery = "FROM author WHERE lastname = :lastname";
+        String lastNameQuery = "FROM Author WHERE lastname = :lastname";
         Query query = sessionFactory.getCurrentSession().createQuery(lastNameQuery);
         query.setString("lastname", lastname);
         return (Author)query.uniqueResult();

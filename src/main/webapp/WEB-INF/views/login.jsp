@@ -11,6 +11,8 @@
     <tr><td>Password: </td><td><input name="password" type="password"></td></tr>
     <tr><td colspan="2" align="right"><input type="submit" value="Submit"></td></tr>
   </table>
+  <input type="hidden" name="${_csrf.parameterName}"
+         value="${_csrf.token}" />
   <div style="color:red">${error}</div>
 </form:form>
 

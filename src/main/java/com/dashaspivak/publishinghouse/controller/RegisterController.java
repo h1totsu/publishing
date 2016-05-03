@@ -29,14 +29,7 @@ public class RegisterController {
     @RequestMapping(method = RequestMethod.POST)
     public String processRegistration(@ModelAttribute("userForm") User user,
                                       Map<String, Object> model) {
-
-        System.out.println("firstname: " + user.getFirstname());
-        System.out.println("lastname: " + user.getLastname());
-        System.out.println("email: " + user.getEmail());
-        System.out.println("password: " + user.getPassword());
-
         userDao.create(user);
-
         return "layout/success";
     }
 }

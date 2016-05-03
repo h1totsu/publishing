@@ -25,9 +25,9 @@ public class UserRestController {
     public ResponseEntity<List<User>> findAll() {
         List<User> users = userDao.findAll();
         if (users.size() == 0) {
-            return new ResponseEntity<List<User>>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<List<User>>(userDao.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(userDao.findAll(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -35,8 +35,8 @@ public class UserRestController {
         return new ResponseEntity<User>(userDao.findById(id), HttpStatus.FOUND);
     }
 
-    @RequestMapping(value = "/{email}", method = RequestMethod.GET)
+    @RequestMapping(value = "/email/{email}", method = RequestMethod.GET)
     public ResponseEntity<User> findByEmail (@PathVariable String email) {
-        return new ResponseEntity<User>(userDao.findByEmail(email), HttpStatus.FOUND);
+        return new ResponseEntity<>(userDao.findByEmail(email), HttpStatus.FOUND);
     }
 }

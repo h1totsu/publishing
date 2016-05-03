@@ -1,7 +1,9 @@
 package com.dashaspivak.publishinghouse.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Kokosha on 29.02.2016.
@@ -13,20 +15,10 @@ public class Role {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
+
     @Basic
     @Column(name = "role_name")
     private String roleName;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="role")
-    private List<UserRole> userRoleList;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getRoleName() {
         return roleName;
@@ -36,13 +28,28 @@ public class Role {
         this.roleName = roleName;
     }
 
-    public List<UserRole> getUserRoleList() {
-        return userRoleList;
+    public long getId() {
+        return id;
     }
 
-    public void setUserRoleList(List<UserRole> userRoleList) {
-        this.userRoleList = userRoleList;
+    public void setId(long id) {
+        this.id = id;
     }
+
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+
+    @ManyToMany
+    @JoinTable(name="userrole",
+        joinColumns = @JoinColumn(name = "id_roles"),
+        inverseJoinColumns = @JoinColumn(name = "id_user"))
+    private Set<User> users = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {
