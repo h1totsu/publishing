@@ -87,8 +87,8 @@
 
 
               <sec:authorize access="!isAuthenticated()">
-                <li><a href="/layout/reglog" class="button special"><spring:message code="resource.login"/></a></li>
-                <li><a href="/layout/reglog" class="button special"><spring:message code="resource.registration"/></a></li>
+                <li><a href="/reglog" class="button special"><spring:message code="resource.login"/></a></li>
+                <li><a href="/register" class="button special"><spring:message code="resource.registration"/></a></li>
               </sec:authorize>
 
 

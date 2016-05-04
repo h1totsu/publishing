@@ -25,11 +25,6 @@ public class MainController {
         return "template";
     }
 
-    @RequestMapping(value = "/layout/reglog", method = RequestMethod.GET)
-    String getGegLog(Model model) {
-        return "/layout/reglog";
-    }
-
     @RequestMapping(value = "/bcatalog", method = RequestMethod.GET)
     String getBooksCatalog(Model model) {
         return "/bookCatalog";

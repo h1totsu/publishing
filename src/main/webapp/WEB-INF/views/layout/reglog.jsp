@@ -42,17 +42,15 @@
             </div>
             <div class="col-sm-4">
                 <div class="signup-form"><!--sign up form-->
-                    <form:form action="register" method="post" commandName="userForm">
                     <h2>New User Signup!</h2>
-
-                    <form action="#">
+                    <c:out value="${message}" />
+                    <form:form action="register" method="post" commandName="userForm">
                         <input type="text" placeholder="First name" name="firstname" required/>
                         <input type="text" placeholder="Last name" name="lastname" required/>
                         <input type="email" placeholder="Email"  name="email"  required/>
                         <input type="password" placeholder="password"  name="password" required/>
                         <input type="password" placeholder="Password confirm"  name="confirmPassword" required/>
                         <button type="submit" class="btn btn-default">Signup</button>
-                    </form>
                     </form:form>
                 </div>
                 <!--/sign up form-->
