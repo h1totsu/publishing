@@ -14,7 +14,7 @@ import java.util.Map;
  * Created by Kokosha on 26.04.2016.
  */
 @Controller
-@RequestMapping(value = "/register")
+@RequestMapping(value = "register")
 public class RegisterController {
     @RequestMapping(method = RequestMethod.GET)
     public String viewRegistration(Map<String, Object> model) {
@@ -29,6 +29,8 @@ public class RegisterController {
     @RequestMapping(method = RequestMethod.POST)
     public String processRegistration(@ModelAttribute("userForm") User user,
                                       Map<String, Object> model) {
+      //  if(userDao.findByEmail(user.getEmail()) != null){
+//            return "layout/reglog";}
         userDao.create(user);
         return "layout/success";
     }

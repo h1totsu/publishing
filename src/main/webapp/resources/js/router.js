@@ -37,9 +37,6 @@ define(['backbone',
             switch(type) {
                 case 'book': {
                    new Book({'id' : id}).fetch({
-                       success: function(data) {
-                           //console
-                       },
                        error: function(data) {
                            new PageView().render(data);
                        }

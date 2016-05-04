@@ -4,6 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <sec:csrfMetaTags/>
 </head>
 <header id="header"><!--header-->
   <div class="header_top"><!--header_top-->
@@ -70,14 +71,27 @@
               <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
               <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
               <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-              <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
-              <li><a href="<c:url value="/layout/registration"/>"><i class="fa fa-lock"></i> Registration</a></li>
+              <%--<li><a href="/layout/reglog"><i class="fa fa-lock"></i> Login</a></li>--%>
+              <%--<li><a href="layout/reglog"><i class="fa fa-lock"></i> Registration</a></li>--%>
               <li>
                 <a href="?lang=en">EN</a>
               </li>
               <li>
                 <a href="?lang=ru">RU</a>
               </li>
+
+
+                <sec:authorize access="isAuthenticated()">
+                    <a href="<c:url value="/j_spring_security_logout" />">Logout</a>
+                </sec:authorize>
+
+
+              <sec:authorize access="!isAuthenticated()">
+                <li><a href="/layout/reglog" class="button special"><spring:message code="resource.login"/></a></li>
+                <li><a href="/layout/reglog" class="button special"><spring:message code="resource.registration"/></a></li>
+              </sec:authorize>
+
+
             </ul>
           </div>
         </div>
