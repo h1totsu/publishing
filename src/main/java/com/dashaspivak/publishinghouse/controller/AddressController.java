@@ -21,7 +21,7 @@ public class AddressController {
             AddressUser userAddress = new AddressUser();
             model.put("userAddress", userAddress);
 
-            return "layout/address";
+            return "layout/checkout";
         }
 
         @Autowired

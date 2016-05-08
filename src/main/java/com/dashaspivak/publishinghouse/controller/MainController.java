@@ -1,6 +1,7 @@
 package com.dashaspivak.publishinghouse.controller;
 
 import com.dashaspivak.publishinghouse.dao.AuthorDao;
+import com.dashaspivak.publishinghouse.dao.BookDetailsDao;
 import com.dashaspivak.publishinghouse.dao.UserDao;
 import com.dashaspivak.publishinghouse.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class MainController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     String getMain(Model model) {
 //        model.addAttribute("test", authorDao.findAll());
-        return "template";
+        return "/layout/checkout";
     }
 
     @RequestMapping(value = "/bcatalog", method = RequestMethod.GET)

@@ -25,6 +25,12 @@ public class LoginController {
         return "layout/reglog";
     }
 
-
+    @RequestMapping(value = "/checkout", method = RequestMethod.GET)
+    public String showCheckoutPage(Model model, @RequestParam(value = "error", required = false) String error) {
+        if (error != null) {
+            model.addAttribute("error", "Invalid info");
+        }
+        return "layout/checkout";
+    }
 
 }

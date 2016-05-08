@@ -10,9 +10,7 @@ public class BookDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Basic
-    @Column(name = "id_book")
-    private long idBook;
+
     @Basic
     @Column(name = "id_language")
     private long idLanguage;
@@ -24,14 +22,6 @@ public class BookDetails {
     private String url;
 
 
-
-    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_book", insertable = false, updatable = false)
-    private Book book;
-    //
-    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_language", insertable = false, updatable = false)
-    private Language language;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "bookDetails")
     private List<Order> orderList;
 
@@ -41,14 +31,6 @@ public class BookDetails {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public long getIdBook() {
-        return idBook;
-    }
-
-    public void setIdBook(long idBook) {
-        this.idBook = idBook;
     }
 
     public long getIdLanguage() {
@@ -82,21 +64,7 @@ public class BookDetails {
     public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
     }
-    public Book getBook() {
-        return book;
-    }
 
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public Language getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(Language language) {
-        this.language = language;
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -105,7 +73,6 @@ public class BookDetails {
         BookDetails that = (BookDetails) o;
 
         if (id != that.id) return false;
-        if (idBook != that.idBook) return false;
         if (idLanguage != that.idLanguage) return false;
         if (Double.compare(that.price, price) != 0) return false;
         if (url != null ? !url.equals(that.url) : that.url != null) return false;
@@ -118,7 +85,6 @@ public class BookDetails {
         int result;
         long temp;
         result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (int) (idBook ^ (idBook >>> 32));
         result = 31 * result + (int) (idLanguage ^ (idLanguage >>> 32));
         temp = Double.doubleToLongBits(price);
         result = 31 * result + (int) (temp ^ (temp >>> 32));

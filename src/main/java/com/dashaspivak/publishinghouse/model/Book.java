@@ -55,6 +55,17 @@ public class Book {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
     private List<LastSeen> lastSeenList;
 
+//    public List<Language> getLanguageList() {
+//        return languageList;
+//    }
+//
+//    public void setLanguageList(List<Language> languageList) {
+//        this.languageList = languageList;
+//    }
+//
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="book")
+//    private List<Language> languageList;
+
     public long getId() {
         return id;
     }

@@ -17,6 +17,9 @@ public class Language {
     @Column(name = "language")
     private String language;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<BookDetails> bookDetailsList;
+
     public long getId() {
         return id;
     }
@@ -31,6 +34,14 @@ public class Language {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public List<BookDetails> getBookDetailsList() {
+        return bookDetailsList;
+    }
+
+    public void setBookDetailsList(List<BookDetails> bookDetailsList) {
+        this.bookDetailsList = bookDetailsList;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.dashaspivak.publishinghouse.dao.impl;
 
 import com.dashaspivak.publishinghouse.model.Book;
+import com.dashaspivak.publishinghouse.model.Language;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,9 +44,17 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public Book findByName(String book) {
-        String bookQuery = "FROM book WHERE book = :book";
+        String bookQuery = "FROM Book WHERE book = :book";
         Query query = sessionFactory.getCurrentSession().createQuery(bookQuery);
         query.setString("book", book);
         return (Book)query.uniqueResult();
     }
+
+//    @Override
+//    public List<Language> getLanguage(long idBook){
+//        String bookQuery = "FROM Language WHERE idBook = :idBook";
+//        Query query = sessionFactory.getCurrentSession().createQuery(bookQuery);
+//        query.setLong("idBook", idBook);
+//        return query.list();
+//    }
 }
